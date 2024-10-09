@@ -1,0 +1,22 @@
+<%- include("partials/header.ejs") %>
+
+<div class="min-vh-100">
+    <div class="container my-5">
+        <div class="row flex-row justify-content-evenly">
+            <div class="content col-12 col-xxl-8 col-xl-8 p-4">
+                <h1>Edit Post</h1>
+                <form action="/update/<%= post.id %>" method="POST">
+                    <!-- <input type="text" class="blog-post" name="title" placeholder="Title"> -->
+                    <!-- <input type="text" name="content" class="blog-content" placeholder="Content"> -->
+                    <% if(locals.post){ %> 
+                    <textarea name="title"class="blog-post" rows="1" cols="82"><%= post.title %></textarea>
+                    <textarea name="content"class="blog-post" rows="20" cols="82"><%= post.post %></textarea>
+                    <% } %>
+                    <button class="btn btn-light fs-5 btn-lg button-rad">Update</button>           
+                </form>    
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include("partials/footer.ejs") %>

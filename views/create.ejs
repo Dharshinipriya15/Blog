@@ -1,0 +1,27 @@
+<%- include("partials/header.ejs") %>
+
+<div class="min-vh-100">
+    <div class="container my-5">
+        <div class="row flex-row justify-content-evenly">
+            <div class="content col-12 col-xxl-8 col-xl-8 p-4">
+                <h1>Create Post</h1>
+                <form action="/save" method="POST">
+                    <!-- <input type="text" class="blog-post" name="title" placeholder="Title"> -->
+                    <!-- <input type="text" name="content" class="blog-content" placeholder="Content"> -->
+                    <textarea name="title"class="blog-post" rows="1" cols="82" placeholder="Title"></textarea>
+                    <textarea name="content"class="blog-post" rows="30" cols="82" placeholder="Content"></textarea>
+                    <button class="btn btn-light fs-5 btn-lg button-rad">Create Post</button>           
+                </form>    
+            </div>
+            <div class="content col-2 d-none d-lg-none d-md-none d-sm-none d-xl-block" style="height:250px">              
+                <div class="py-2 px-2" >
+                    <p>Go on, post that<br> quirky thought<br> you've been<br> nurturing in your<br>
+                    mind – the internet's<br> a wild jungle, and<br> your ideas are like<br>
+                    glitter in the foliage! <br>🌟🌿</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include("partials/footer.ejs") %>

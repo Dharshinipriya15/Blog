@@ -1,0 +1,27 @@
+<%- include("partials/header.ejs") %>
+
+<div class="min-vh-100">
+    <div class="container my-5">
+        <div class="row flex-row justify-content-center"style="gap:20px">
+            <div class="content col-12 col-xxl-8 col-xl-8 p-4">                
+                <% if(locals.post){ %>                                                      
+                    <h1 class="pt-serif"><%= post.title %></h1>
+                    <p class="mb-4"><%= post.post %></p>                               
+                <% } %>                                 
+            </div>
+            <div class="content con-view col-2 d-none d-lg-none d-md-none d-sm-none d-xl-block mt-4">  
+                <div class="text-center mt-4">                    
+                    <form action="/delete" method="POST" style="display: inline;">
+                        <input type="hidden" name="postId" value="<%= post.id %>"> <!-- Pass the ID -->
+                        <button class="btn delete-btn fs-5 btn-lg" style="width: 80%;">Delete</button>
+                    </form>
+                </div>
+                <div class="text-center mt-4">
+                    <a href="/edit/<%= post.id %>"><button class="btn btn-light fs-5 btn-lg"style="width: 80%;border-radius: 25px;">Edit</button></a>
+                </div> 
+            </div>
+        </div>
+    </div>    
+</div>
+
+<%- include("partials/footer.ejs") %>

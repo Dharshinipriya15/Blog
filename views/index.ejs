@@ -1,0 +1,44 @@
+<%- include("partials/header.ejs") %>
+
+<div class="min-vh-100">
+    <div class="container my-5">
+        <div class="row flex-row justify-content-evenly">
+            <div class="content col-12 col-xxl-8 col-xl-8 p-4">
+                
+                    <ul class="p-0">
+                        
+                        <% if(locals.Posts){ %>
+                        <%Posts.forEach((post) => {%>                            
+                            <li class="p-1">
+                                <p class="fs-6 fw-light"><%= post.date %>, <%= post.time %> </p>
+                                <h3 class="fs-2 pt-serif"><a href="/view/<%= post.id %>"><%= post.title %></a></h3>
+                                <p class="fs-5 my-4"><%= post.post %></p>
+                                <hr>
+                            </li>
+                        <% } )} %>
+                    </ul>                
+            </div>
+            <div id="aside" class="content col-3 d-none d-lg-none d-md-none d-sm-none d-xl-block">
+                <div class="text-center my-4">
+                    <a href="/create"><button class="btn btn-light fs-5 btn-lg" style="width: 90%;border-radius: 25px;">Create Post</button></a>
+                </div>                
+                <div class="px-3">
+                    <p>RECENT POSTS</p>
+                    <ul class="p-0">  
+                        <% if(locals.Posts){ %>
+                        <%Posts.forEach((post) => {%>           
+                            <li>
+                                <h3 class="fs-6 pt-serif">
+                                    <a style="text-decoration: none;" href="/view/<%= post.id %>"><%= post.title %></a>
+                                </h3>
+                                <hr>
+                            </li> 
+                        <% } )} %>                       
+                    </ul>            
+                </div>   
+            </div>
+        </div>
+    </div>    
+</div>
+
+<%- include("partials/footer.ejs") %>
